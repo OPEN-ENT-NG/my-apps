@@ -1,0 +1,15 @@
+﻿
+    <div class="my-apps row">
+        <div ng-if="widget.apps.length === 0">
+            Cliquez sur "plus" pour sélectionner vos applications favorites.
+        </div>
+        <div class="bookmarked-app" ng-repeat="app in widget.apps">
+            <a href="[[app.address]]" target="[[app.target]]">
+                <i class="[[app.icon]]" ng-if="app.icon.indexOf('/') === -1" tooltip="[[app.displayName]]"></i>
+                <img skin-src="[[app.icon]]" ng-if="app.icon.indexOf('/') !== -1" tooltip="[[app.displayName]]" />
+            </a>
+        </div>
+    </div>
+    <div class="more row" ng-click="widget.redirect('/welcome')">
+        <a href="/welcome"><i18n>plus</i18n></a>
+    </div>
