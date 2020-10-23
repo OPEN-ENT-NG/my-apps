@@ -5,7 +5,7 @@
             <i18n>navbar.myapps.more</i18n>
         </div>
         <div class="bookmarked-app" ng-repeat="app in widget.apps">
-            <a href="[[app.address]]" target="[[app.target]]">
+            <a connector-lightbox-trigger="app">
                 <i class="[[app.icon]]" ng-if="app.icon.indexOf('/') === -1" tooltip="[[app.displayName]]"></i>
                 <img skin-src="[[app.icon]]" ng-if="app.icon.indexOf('/') !== -1" tooltip="[[app.displayName]]" />
             </a>
