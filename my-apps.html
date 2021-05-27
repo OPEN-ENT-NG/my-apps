@@ -4,11 +4,13 @@
         <div ng-if="widget.apps.length === 0">
             <i18n>navbar.myapps.more</i18n>
         </div>
-        <div class="bookmarked-app" ng-repeat="app in widget.apps">
-            <a connector-lightbox-trigger="app">
-                <i class="[[app.icon]]" ng-if="app.icon.indexOf('/') === -1" tooltip="[[app.displayName]]"></i>
-                <img skin-src="[[app.icon]]" ng-if="app.icon.indexOf('/') !== -1" tooltip="[[app.displayName]]" />
-            </a>
+        <div class="flex-row f-wrap justify-center">
+            <div class="bookmarked-app" ng-repeat="app in widget.apps">
+                <a connector-lightbox-trigger="app">
+                    <i class="[[app.icon]]" ng-if="app.icon.indexOf('/') === -1" tooltip="[[app.displayName]]"></i>
+                    <img skin-src="[[app.icon]]" ng-if="app.icon.indexOf('/') !== -1" tooltip="[[app.displayName]]" />
+                </a>
+            </div>
         </div>
     </div>
     <div class="more row" ng-click="widget.redirect('/welcome')">
